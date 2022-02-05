@@ -13,23 +13,18 @@ import com.inatel.quotationmanagement.entities.Quote;
 import com.inatel.quotationmanagement.repositories.QuoteRepository;
 
 import org.junit.jupiter.api.Test;
-import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-@AutoConfigureMockMvc
 public class QuoteServiceTest {
 
     @Mock
     private QuoteRepository repository;
 
-    @InjectMocks
+    @Autowired
     private QuoteService service;
-
-    @InjectMocks
-    private StockService stockService;
 
     @Test
     void testFindAll() {
@@ -38,14 +33,7 @@ public class QuoteServiceTest {
     }
 
     @Test
-    void testFindByStockId() {
-        Quote quote = service.findByStockId("petr3");
-        assertNotNull(quote);
-    }
-
-    @Test
     void testSave() {
-
         try {
             Map<Date, Double> map = new HashMap<>();
             map.put(new SimpleDateFormat("yyyy-MM-dd").parse("2022-01-01"), 51d);
