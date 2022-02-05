@@ -2,9 +2,7 @@ package com.inatel.quotationmanagement.services;
 
 import java.util.List;
 
-import com.inatel.quotationmanagement.clients.StockManagerClient;
 import com.inatel.quotationmanagement.dtos.QuoteDTO;
-import com.inatel.quotationmanagement.dtos.StockDTO;
 import com.inatel.quotationmanagement.entities.Quote;
 import com.inatel.quotationmanagement.exceptions.QuoteException;
 import com.inatel.quotationmanagement.repositories.QuoteRepository;
@@ -20,14 +18,16 @@ public class QuoteService {
     private QuoteRepository repository;
 
     @Autowired
-    private StockManagerClient stockManagerClient;
+    private StockService stockService;
 
     public Quote save(QuoteDTO quoteDTO) {
         try {
-            List<StockDTO> listStock = stockManagerClient.findAll();
-            Boolean contains = listStock.stream().anyMatch(x -> quoteDTO.getStockId().equals(x.getId()));
+            if (stockService.getListStock() == null) {
+                stockService.createCache();
+            }
+            if (stockService.getListStock().stream()
+                    .anyMatch(x -> quoteDTO.getStockId().equals(x.getId()))) {
 
-            if (Boolean.TRUE.equals(contains)) {
                 return repository.save(dtoToEntity(quoteDTO));
             } else {
                 throw new QuoteException("StockId nao autorizado para salvar");
@@ -45,11 +45,21 @@ public class QuoteService {
         return repository.findAll();
     }
 
-    private Quote dtoToEntity(QuoteDTO dto) {
+    public Quote dtoToEntity(QuoteDTO dto) {
         try {
             Quote entity = new Quote();
             BeanUtils.copyProperties(dto, entity);
             return entity;
+        } catch (Exception e) {
+            throw new IllegalArgumentException(e.getMessage());
+        }
+    }
+
+    public QuoteDTO entityToDTO(Quote entity) {
+        try {
+            QuoteDTO dto = new QuoteDTO();
+            BeanUtils.copyProperties(entity, dto);
+            return dto;
         } catch (Exception e) {
             throw new IllegalArgumentException(e.getMessage());
         }
