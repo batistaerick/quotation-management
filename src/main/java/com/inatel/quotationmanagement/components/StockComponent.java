@@ -15,7 +15,7 @@ public class StockComponent {
     private StockManagerClient stockManagerClient;
 
     @PostConstruct
-    public void deleteCache() {
+    public void registry() {
         stockManagerClient.notification(new StockNotificationDTO("localhost", 8081));
     }
 }
