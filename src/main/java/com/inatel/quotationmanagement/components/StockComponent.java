@@ -16,6 +16,6 @@ public class StockComponent {
 
     @PostConstruct
     public void registry() {
-        stockManagerClient.notification(new StockNotificationDTO("localhost", 8081));
+        stockManagerClient.notification(new StockNotificationDTO("host.docker.internal", 8081));
     }
 }
