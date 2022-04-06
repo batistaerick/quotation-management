@@ -1,4 +1,4 @@
-package com.inatel.quotationmanagement.exceptions;
+package com.quotationmanagement.exceptions;
 
 public class QuoteException extends RuntimeException {
     public QuoteException(String msg) {

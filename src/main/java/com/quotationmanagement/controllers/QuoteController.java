@@ -1,10 +1,10 @@
-package com.inatel.quotationmanagement.controllers;
+package com.quotationmanagement.controllers;
 
 import java.util.List;
 
-import com.inatel.quotationmanagement.dtos.QuoteDTO;
-import com.inatel.quotationmanagement.entities.Quote;
-import com.inatel.quotationmanagement.services.QuoteService;
+import com.quotationmanagement.dtos.QuoteDTO;
+import com.quotationmanagement.entities.Quote;
+import com.quotationmanagement.services.QuoteService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

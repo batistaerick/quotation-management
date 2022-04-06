@@ -1,6 +1,6 @@
-package com.inatel.quotationmanagement.controllers;
+package com.quotationmanagement.controllers;
 
-import com.inatel.quotationmanagement.services.StockService;
+import com.quotationmanagement.services.StockService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

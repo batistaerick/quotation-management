@@ -1,4 +1,4 @@
-package com.inatel.quotationmanagement.entities;
+package com.quotationmanagement.entities;
 
 import java.io.Serializable;
 import java.util.Date;

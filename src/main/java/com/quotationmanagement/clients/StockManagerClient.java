@@ -1,9 +1,9 @@
-package com.inatel.quotationmanagement.clients;
+package com.quotationmanagement.clients;
 
 import java.util.List;
 
-import com.inatel.quotationmanagement.dtos.StockDTO;
-import com.inatel.quotationmanagement.dtos.StockNotificationDTO;
+import com.quotationmanagement.dtos.StockDTO;
+import com.quotationmanagement.dtos.StockNotificationDTO;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Component;

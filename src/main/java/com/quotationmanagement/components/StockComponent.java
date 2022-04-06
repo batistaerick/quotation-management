@@ -1,9 +1,9 @@
-package com.inatel.quotationmanagement.components;
+package com.quotationmanagement.components;
 
 import javax.annotation.PostConstruct;
 
-import com.inatel.quotationmanagement.clients.StockManagerClient;
-import com.inatel.quotationmanagement.dtos.StockNotificationDTO;
+import com.quotationmanagement.clients.StockManagerClient;
+import com.quotationmanagement.dtos.StockNotificationDTO;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

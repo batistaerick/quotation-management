@@ -1,6 +1,6 @@
-package com.inatel.quotationmanagement.repositories;
+package com.quotationmanagement.repositories;
 
-import com.inatel.quotationmanagement.entities.Quote;
+import com.quotationmanagement.entities.Quote;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

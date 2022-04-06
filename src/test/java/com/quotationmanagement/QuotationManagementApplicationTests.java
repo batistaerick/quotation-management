@@ -1,4 +1,4 @@
-package com.inatel.quotationmanagement;
+package com.quotationmanagement;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

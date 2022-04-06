@@ -1,11 +1,11 @@
-package com.inatel.quotationmanagement.services;
+package com.quotationmanagement.services;
 
 import java.util.List;
 
-import com.inatel.quotationmanagement.dtos.QuoteDTO;
-import com.inatel.quotationmanagement.entities.Quote;
-import com.inatel.quotationmanagement.exceptions.QuoteException;
-import com.inatel.quotationmanagement.repositories.QuoteRepository;
+import com.quotationmanagement.dtos.QuoteDTO;
+import com.quotationmanagement.entities.Quote;
+import com.quotationmanagement.exceptions.QuoteException;
+import com.quotationmanagement.repositories.QuoteRepository;
 
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
