@@ -16,8 +16,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 public interface StockManagerClient {
 
     @GetMapping(value = "/stock")
-    public List<StockDTO> findAll();
+    List<StockDTO> findAll();
 
     @PostMapping(value = "/notification")
-    public void notification(@RequestBody StockNotificationDTO stockNotificationDTO);
+    void notification(@RequestBody StockNotificationDTO stockNotificationDTO);
 }

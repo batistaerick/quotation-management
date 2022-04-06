@@ -27,18 +27,17 @@ public class QuoteService {
             }
             if (stockService.getListStock().stream()
                     .anyMatch(x -> quoteDTO.getStockId().equals(x.getId()))) {
-
                 return repository.save(dtoToEntity(quoteDTO));
             } else {
                 throw new QuoteException("StockId nao autorizado para salvar");
             }
         } catch (Exception e) {
-            throw new QuoteException(e.getMessage());
+            throw new QuoteException(e);
         }
     }
 
     public Quote findByStockId(String stockId) {
-        return repository.findByStockId(stockId);
+        return repository.findByStockId(stockId).orElseThrow(() -> new QuoteException("Quote not found"));
     }
 
     public List<Quote> findAll() {
@@ -51,7 +50,7 @@ public class QuoteService {
             BeanUtils.copyProperties(dto, entity);
             return entity;
         } catch (Exception e) {
-            throw new IllegalArgumentException(e.getMessage());
+            throw new QuoteException(e);
         }
     }
 
@@ -61,7 +60,7 @@ public class QuoteService {
             BeanUtils.copyProperties(entity, dto);
             return dto;
         } catch (Exception e) {
-            throw new IllegalArgumentException(e.getMessage());
+            throw new QuoteException(e);
         }
     }
 }
