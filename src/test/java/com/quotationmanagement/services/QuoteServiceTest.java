@@ -1,4 +1,4 @@
-package com.inatel.quotationmanagement.services;
+package com.quotationmanagement.services;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
@@ -9,8 +9,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.inatel.quotationmanagement.entities.Quote;
-import com.inatel.quotationmanagement.repositories.QuoteRepository;
+import com.quotationmanagement.entities.Quote;
+import com.quotationmanagement.repositories.QuoteRepository;
 
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;

@@ -1,4 +1,4 @@
-package com.inatel.quotationmanagement.dtos;
+package com.quotationmanagement.dtos;
 
 import java.io.Serializable;
 

@@ -1,9 +1,9 @@
-package com.inatel.quotationmanagement.services;
+package com.quotationmanagement.services;
 
 import java.util.List;
 
-import com.inatel.quotationmanagement.clients.StockManagerClient;
-import com.inatel.quotationmanagement.dtos.StockDTO;
+import com.quotationmanagement.clients.StockManagerClient;
+import com.quotationmanagement.dtos.StockDTO;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

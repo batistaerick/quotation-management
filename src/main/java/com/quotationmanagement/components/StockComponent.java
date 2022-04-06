@@ -1,9 +1,9 @@
-package com.inatel.quotationmanagement.components;
+package com.quotationmanagement.components;
 
 import javax.annotation.PostConstruct;
 
-import com.inatel.quotationmanagement.clients.StockManagerClient;
-import com.inatel.quotationmanagement.dtos.StockNotificationDTO;
+import com.quotationmanagement.clients.StockManagerClient;
+import com.quotationmanagement.dtos.StockNotificationDTO;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -16,6 +16,6 @@ public class StockComponent {
 
     @PostConstruct
     public void registry() {
-        stockManagerClient.notification(new StockNotificationDTO("localhost", 8081));
+        stockManagerClient.notification(new StockNotificationDTO("host.docker.internal", 8081));
     }
 }

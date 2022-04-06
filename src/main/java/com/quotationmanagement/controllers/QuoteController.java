@@ -1,10 +1,10 @@
-package com.inatel.quotationmanagement.controllers;
+package com.quotationmanagement.controllers;
 
 import java.util.List;
 
-import com.inatel.quotationmanagement.dtos.QuoteDTO;
-import com.inatel.quotationmanagement.entities.Quote;
-import com.inatel.quotationmanagement.services.QuoteService;
+import com.quotationmanagement.dtos.QuoteDTO;
+import com.quotationmanagement.entities.Quote;
+import com.quotationmanagement.services.QuoteService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -24,16 +24,16 @@ public class QuoteController {
 
     @PostMapping(value = "/save")
     public ResponseEntity<Quote> save(@RequestBody QuoteDTO dto) {
-        return ResponseEntity.ok().body(service.save(dto));
+        return ResponseEntity.ok(service.save(dto));
     }
 
     @GetMapping(value = "/findByStockId/{stockId}")
     public ResponseEntity<Quote> findByStockId(@PathVariable String stockId) {
-        return ResponseEntity.ok().body(service.findByStockId(stockId));
+        return ResponseEntity.ok(service.findByStockId(stockId));
     }
 
     @GetMapping
     public ResponseEntity<List<Quote>> findAll() {
-        return ResponseEntity.ok().body(service.findAll());
+        return ResponseEntity.ok(service.findAll());
     }
 }
