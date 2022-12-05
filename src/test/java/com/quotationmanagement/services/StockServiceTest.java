@@ -9,21 +9,18 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-@AutoConfigureMockMvc
-public class StockServiceTest {
-
-    @Autowired
-    private StockService service;
+class StockServiceTest {
 
     @Test
-    void testCreateCache() {
-        service.createCache();
-        assertNotNull(service.getListStock());
+    void createCache() {
     }
 
     @Test
-    void testDeleteCache() {
-        service.deleteCache();
-        assertNull(service.getListStock());
+    void deleteCache() {
     }
+
+    @Test
+    void getListStock() {
+    }
+
 }

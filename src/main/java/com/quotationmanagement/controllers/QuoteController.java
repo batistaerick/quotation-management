@@ -6,6 +6,7 @@ import com.quotationmanagement.dtos.QuoteDTO;
 import com.quotationmanagement.entities.Quote;
 import com.quotationmanagement.services.QuoteService;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,17 +18,17 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/quotes")
+@RequiredArgsConstructor
 public class QuoteController {
 
-    @Autowired
-    private QuoteService service;
+    private final QuoteService service;
 
-    @PostMapping(value = "/save")
+    @PostMapping
     public ResponseEntity<Quote> save(@RequestBody QuoteDTO dto) {
         return ResponseEntity.ok(service.save(dto));
     }
 
-    @GetMapping(value = "/findByStockId/{stockId}")
+    @GetMapping(value = "/find-by-stock-id/{stockId}")
     public ResponseEntity<Quote> findByStockId(@PathVariable String stockId) {
         return ResponseEntity.ok(service.findByStockId(stockId));
     }
@@ -36,4 +37,5 @@ public class QuoteController {
     public ResponseEntity<List<Quote>> findAll() {
         return ResponseEntity.ok(service.findAll());
     }
+
 }

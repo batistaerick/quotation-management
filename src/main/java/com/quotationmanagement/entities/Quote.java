@@ -1,18 +1,12 @@
 package com.quotationmanagement.entities;
 
+import java.io.Serial;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.Map;
 
-import javax.persistence.CollectionTable;
-import javax.persistence.Column;
-import javax.persistence.ElementCollection;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.MapKeyColumn;
-import javax.persistence.Table;
 
+import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
@@ -23,6 +17,7 @@ import lombok.*;
 @NoArgsConstructor
 public class Quote implements Serializable {
 
+    @Serial
     private static final long serialVersionUID = 1L;
 
     @Id
@@ -36,4 +31,5 @@ public class Quote implements Serializable {
     @MapKeyColumn(name = "stock_date")
     @Column(name = "value")
     private Map<Date, Double> quotes;
+
 }

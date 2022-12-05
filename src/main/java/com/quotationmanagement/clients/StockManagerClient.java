@@ -12,12 +12,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 @Component
-@FeignClient(name = "stock-manager", url = "host.docker.internal:8080")
+@FeignClient(name = "stock-manager", url = "localhost:8080")
 public interface StockManagerClient {
 
-    @GetMapping(value = "/stock")
+    @GetMapping("/stock")
     List<StockDTO> findAll();
 
-    @PostMapping(value = "/notification")
+    @PostMapping("/notification")
     void notification(@RequestBody StockNotificationDTO stockNotificationDTO);
+
 }

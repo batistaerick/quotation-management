@@ -9,4 +9,5 @@ class QuotationManagementApplicationTests {
 	@Test
 	void contextLoads() {
 	}
+
 }
